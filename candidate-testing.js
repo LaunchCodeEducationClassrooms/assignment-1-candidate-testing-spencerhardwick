@@ -21,7 +21,10 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < 5; i++) {
-    candidateAnswer.push = input.question(question[i]);
+    candidateAnswer[i] = input.question(question[i]);
+    console.log(`Your Answer: ${candidateAnswer[i]}`);
+    console.log(`Correct Answer: ${correctAnswer[i]}`);
+    console.log("\n");
   }
 }
 
@@ -37,7 +40,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log(`Thank you, ${candidateName}!`);
+  console.log(`Candidate Name: ${candidateName}`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
