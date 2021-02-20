@@ -46,7 +46,7 @@ function gradeQuiz(candidateAnswers) {
     }
   candidateAnswers = candidateAnswer.length;
   console.log(`>>> Overall Grade: ${gradePercentage}% (${correctAnswers} of ${candidateAnswers}) <<<`);
-  console.log(`>>> Status: ${passOrFail}`);
+  console.log(`>>> Status: ${passOrFail} <<<`);
   return grade;
 }
 
