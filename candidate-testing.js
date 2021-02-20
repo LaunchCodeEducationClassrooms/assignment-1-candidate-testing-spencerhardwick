@@ -8,8 +8,8 @@ let candidateName = "";
 let question = ["1) Who was the first American Woman in Space? ", "2) True of false: 5000 meters = 5 kilometers. ", "3) (5+3)/2 * 10 =  ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
 let correctAnswer = ["Sally Ride", "True", "40", "Trajectory", "3"];
 let candidateAnswer = [];
-let questions;
-let correctAnswers;
+let questions = 5;
+let correctAnswers = 0;
 let candidateAnswers;
 
 
@@ -31,8 +31,15 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let grade;
-  
+  let grade = 0;
+    for (let e = 0; e < correctAnswer.length; e++) {
+      if (candidateAnswer[e].toLowerCase === correctAnswer[e].toLowerCase) {
+        grade = grade++;
+        correctAnswers = correctAnswers++
+      }
+    }
+  let gradePercentage = (correctAnswers) / (questions) * 100;
+    //console.log(gradePercentage);
 
   return grade;
 }
