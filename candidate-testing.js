@@ -29,18 +29,24 @@ function askQuestion() {
 }
 
 function gradeQuiz(candidateAnswers) {
-
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let grade = 0;
     for (let e = 0; e < correctAnswer.length; e++) {
-      if (candidateAnswer[e].toLowerCase === correctAnswer[e].toLowerCase) {
-        grade = grade++;
-        correctAnswers = correctAnswers++
+      if (candidateAnswer[e].toLowerCase() === correctAnswer[e].toLowerCase()) {
+        grade++;
+        correctAnswers++;;
       }
     }
   let gradePercentage = (correctAnswers) / (questions) * 100;
-    //console.log(gradePercentage);
-
+  let passOrFail;
+    if (gradePercentage >= 80) {
+      passOrFail = "PASSED";
+    } else {
+      passOrFail = "FAILED";
+    }
+  candidateAnswers = candidateAnswer.length;
+  console.log(`>>> Overall Grade: ${gradePercentage}% (${correctAnswers} of ${candidateAnswers}) <<<`);
+  console.log(`>>> Status: ${passOrFail}`);
   return grade;
 }
 
